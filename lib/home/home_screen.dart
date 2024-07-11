@@ -1,3 +1,5 @@
+import 'package:ecomerce_app/data/product_data.dart';
+import 'package:ecomerce_app/home/widgets/home_shoping_items.dart';
 import 'package:flutter/material.dart';
 import 'widgets/home_appbar.dart';
 import 'widgets/home_categories.dart';
@@ -47,7 +49,37 @@ class _MyHomeScreenState extends State<MyHomeScreen> {
               SizedBox(
                 height: 15,
               ),
+              //for categories
               Categories(),
+              //for special for you
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Special For You",
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w800),
+                  ),
+                  Text(
+                    "See all",
+                    style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.grey),
+                  )
+                ],
+              ),
+              GridView.builder(
+                  physics: NeverScrollableScrollPhysics(),
+                  shrinkWrap: true,
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      childAspectRatio: 0.78,
+                      crossAxisSpacing: 15,
+                      mainAxisSpacing: 15),
+                  itemCount: all.length,
+                  itemBuilder: (context, index) {
+                    return ShopingItems(all: all[index]);
+                  })
             ],
           ),
         ),

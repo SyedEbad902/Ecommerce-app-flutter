@@ -23,6 +23,7 @@ class CustomImageSlider extends StatelessWidget {
               allowImplicitScrolling: true,
               onPageChanged: onChange,
               physics: const ClampingScrollPhysics(),
+              
               children: [
                 Image.asset(
                   "assets/images/slider.jpg",
