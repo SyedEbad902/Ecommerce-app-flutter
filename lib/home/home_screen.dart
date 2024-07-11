@@ -1,9 +1,18 @@
 import 'package:flutter/material.dart';
 import 'widgets/home_appbar.dart';
+import 'widgets/home_categories.dart';
+import 'widgets/home_image_slider.dart';
 import 'widgets/home_searchbar.dart';
 
-class MyHomeScreen extends StatelessWidget {
+class MyHomeScreen extends StatefulWidget {
   const MyHomeScreen({super.key});
+
+  @override
+  State<MyHomeScreen> createState() => _MyHomeScreenState();
+}
+
+class _MyHomeScreenState extends State<MyHomeScreen> {
+  int currentSlider = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -11,53 +20,34 @@ class MyHomeScreen extends StatelessWidget {
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(15),
+          padding: const EdgeInsets.all(15),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 25,
               ),
               //for appbar
-              CustomAppBar(),
-              SizedBox(
+              const CustomAppBar(),
+              const SizedBox(
                 height: 15,
               ),
               //for searchbar
-              CustomSearchBar(),
+              const CustomSearchBar(),
+              const SizedBox(
+                height: 15,
+              ),
+              CustomImageSlider(
+                  onChange: (val) {
+                    setState(() {
+                      currentSlider = val;
+                    });
+                  },
+                  currentSlide: currentSlider),
               SizedBox(
                 height: 15,
               ),
-              Stack(
-                children: [
-                  SizedBox(
-                    height: 200,
-                    width: double.infinity,
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(15),
-                      child: PageView(
-                        scrollDirection: Axis.horizontal,
-                        allowImplicitScrolling: true,
-                        physics: ClampingScrollPhysics(),
-                        children: [
-                          Image.asset(
-                            "assets/images/slider.jpg",
-                            fit: BoxFit.fill,
-                          ),
-                          Image.asset(
-                            "assets/images/image1.png",
-                            fit: BoxFit.cover,
-                          ),
-                          Image.asset(
-                            "assets/images/slider3.png",
-                            fit: BoxFit.cover,
-                          )
-                        ],
-                      ),
-                    ),
-                  )
-                ],
-              )
+              Categories(),
             ],
           ),
         ),
