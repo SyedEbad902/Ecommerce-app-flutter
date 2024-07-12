@@ -12,7 +12,7 @@ class MyNavBar extends StatefulWidget {
 
 class _MyNavBarState extends State<MyNavBar> {
   int currentIndex = 2;
-  List screens = [MyCartScreen(), MyFavoriteScreen(), MyHomeScreen()];
+  List screens = [const MyCartScreen(), const MyFavoriteScreen(), const MyHomeScreen()];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,9 +22,9 @@ class _MyNavBarState extends State<MyNavBar> {
             currentIndex = 2;
           });
         },
-        shape: CircleBorder(),
+        shape: const CircleBorder(),
         backgroundColor: const Color.fromARGB(255, 255, 156, 7),
-        child: Icon(
+        child: const Icon(
           Icons.home,
           size: 30,
           color: Colors.white,
@@ -35,7 +35,7 @@ class _MyNavBarState extends State<MyNavBar> {
         elevation: 1,
         height: 60,
         color: Colors.white,
-        shape: CircularNotchedRectangle(),
+        shape: const CircularNotchedRectangle(),
         notchMargin: 10,
         clipBehavior: Clip.antiAliasWithSaveLayer,
         child: Row(
@@ -66,7 +66,7 @@ class _MyNavBarState extends State<MyNavBar> {
                 color: currentIndex == 1 ? Colors.red : Colors.grey,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               width: 15,
             ),
             IconButton(

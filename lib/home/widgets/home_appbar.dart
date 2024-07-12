@@ -12,17 +12,17 @@ class CustomAppBar extends StatelessWidget {
       children: [
         IconButton(
             style: IconButton.styleFrom(
-                backgroundColor: Color.fromARGB(255, 221, 220, 220)),
+                backgroundColor: const Color.fromARGB(255, 221, 220, 220)),
             onPressed: () {},
-            icon: Icon(
+            icon: const Icon(
               Icons.grid_view_rounded,
               size: 25,
             )),
         IconButton(
             style: IconButton.styleFrom(
-                backgroundColor: Color.fromARGB(255, 221, 220, 220)),
+                backgroundColor: const Color.fromARGB(255, 221, 220, 220)),
             onPressed: () {},
-            icon: Icon(
+            icon: const Icon(
               Icons.notifications_outlined,
               size: 25,
             )),

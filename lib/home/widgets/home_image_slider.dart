@@ -50,10 +50,10 @@ class CustomImageSlider extends StatelessWidget {
               children: List.generate(
                 3,
                 (index) => AnimatedContainer(
-                    duration: Duration(milliseconds: 300),
+                    duration: const Duration(milliseconds: 300),
                     width: currentSlide == index ? 15 : 8,
                     height: 8,
-                    margin: EdgeInsets.only(right: 3),
+                    margin: const EdgeInsets.only(right: 3),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
                         color: currentSlide == index

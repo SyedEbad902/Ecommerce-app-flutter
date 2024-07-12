@@ -23,17 +23,17 @@ class Categories extends StatelessWidget {
                             image: AssetImage(categoriesList[index].image),
                             fit: BoxFit.cover)),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 5,
                   ),
                   Text(
                     categoriesList[index].title,
-                    style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold),
+                    style: const TextStyle(fontSize: 13, fontWeight: FontWeight.bold),
                   ),
                 ],
               );
             },
-            separatorBuilder: (context, index) => SizedBox(
+            separatorBuilder: (context, index) => const SizedBox(
                   width: 20,
                 )));
   }

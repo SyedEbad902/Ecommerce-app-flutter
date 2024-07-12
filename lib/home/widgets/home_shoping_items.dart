@@ -20,11 +20,11 @@ class ShopingItems extends StatelessWidget {
             width: 160,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
-                color: Color.fromARGB(255, 242, 240, 240)),
+                color: const Color.fromARGB(255, 242, 240, 240)),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(
+                const SizedBox(
                   height: 15,
                 ),
                 Center(
@@ -35,13 +35,13 @@ class ShopingItems extends StatelessWidget {
                     fit: BoxFit.cover,
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 Center(
                   child: Text(
                     all.title,
-                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+                    style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
                   ),
                 ),
                 // SizedBox(
@@ -53,7 +53,7 @@ class ShopingItems extends StatelessWidget {
                     Text(
                       "price ${all.price}",
                       style:
-                          TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                          const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
                     ),
                   ],
                 )

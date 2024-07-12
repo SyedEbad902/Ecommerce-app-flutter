@@ -1,5 +1,6 @@
 import 'package:ecomerce_app/data/product_data.dart';
 import 'package:ecomerce_app/detail/widgets/detail_image_slider.dart';
+import 'package:ecomerce_app/detail/widgets/item_details.dart';
 import 'package:flutter/material.dart';
 
 import 'widgets/detail_appbar.dart';
@@ -22,7 +23,7 @@ class _MyDetailScreenState extends State<MyDetailScreen> {
         child: Column(
           children: [
 //for detail screen appbar
-            DetailAppbar(),
+            const DetailAppbar(),
             DetailImageSlider(
                 onChange: (index) {
                   setState(() {
@@ -30,23 +31,27 @@ class _MyDetailScreenState extends State<MyDetailScreen> {
                   });
                 },
                 image: widget.all.image),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: List.generate(
-                3,
-                (index) => AnimatedContainer(
-                    duration: Duration(milliseconds: 300),
-                    width: currentSlide == index ? 15 : 8,
-                    height: 8,
-                    margin: EdgeInsets.only(right: 3),
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: currentSlide == index
-                            ? Colors.black
-                            : Colors.transparent,
-                        border: Border.all(color: Colors.black))),
-              ),
+            SliderIndex(currentSlides: currentSlide),
+            // details
+            SizedBox(
+              height: 15,
             ),
+            Container(
+              width: double.infinity,
+              decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.only(
+                      topRight: Radius.circular(40),
+                      topLeft: Radius.circular(40))),
+              padding:
+                  EdgeInsets.only(left: 20, right: 20, top: 20, bottom: 100),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  ItemDetails(all: widget.all),
+                ],
+              ),
+            )
           ],
         ),
       ),

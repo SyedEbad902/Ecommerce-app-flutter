@@ -46,13 +46,13 @@ class _MyHomeScreenState extends State<MyHomeScreen> {
                     });
                   },
                   currentSlide: currentSlider),
-              SizedBox(
+              const SizedBox(
                 height: 15,
               ),
               //for categories
-              Categories(),
+              const Categories(),
               //for special for you
-              Row(
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
@@ -69,9 +69,9 @@ class _MyHomeScreenState extends State<MyHomeScreen> {
                 ],
               ),
               GridView.builder(
-                  physics: NeverScrollableScrollPhysics(),
+                  physics: const NeverScrollableScrollPhysics(),
                   shrinkWrap: true,
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
                       childAspectRatio: 0.78,
                       crossAxisSpacing: 15,

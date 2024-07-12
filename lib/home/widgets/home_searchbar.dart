@@ -7,11 +7,11 @@ class CustomSearchBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 50,
       width: double.infinity,
       child: Row(children: [
-        Container(
+        SizedBox(
           width: 290,
           child: TextField(
             decoration: InputDecoration(
@@ -26,15 +26,15 @@ class CustomSearchBar extends StatelessWidget {
                 )),
           ),
         ),
-        SizedBox(
+        const SizedBox(
           width: 5,
         ),
-        Container(
+        SizedBox(
           height: 35,
           width: 1.5,
           child: IconButton(
             onPressed: () {},
-            icon: Icon(
+            icon: const Icon(
               Icons.search,
               size: 35,
             ),

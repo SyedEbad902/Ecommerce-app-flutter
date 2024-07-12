@@ -6,34 +6,34 @@ class DetailAppbar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(10),
+      padding: const EdgeInsets.all(10),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           IconButton(
               style: IconButton.styleFrom(backgroundColor: Colors.white),
-              onPressed: () {
+             onPressed: () {
                 Navigator.pop(context);
               },
-              icon: Icon(
+              icon: const Icon(
                 Icons.arrow_back_ios,
                 size: 20,
               )),
-          Spacer(),
+          const Spacer(),
           IconButton(
               style: IconButton.styleFrom(backgroundColor: Colors.white),
               onPressed: () {},
-              icon: Icon(
+              icon: const Icon(
                 Icons.share_outlined,
                 size: 20,
               )),
-          SizedBox(
+          const SizedBox(
             width: 10,
           ),
           IconButton(
               style: IconButton.styleFrom(backgroundColor: Colors.white),
               onPressed: () {},
-              icon: Icon(
+              icon: const Icon(
                 Icons.favorite_border_outlined,
                 size: 20,
               )),
