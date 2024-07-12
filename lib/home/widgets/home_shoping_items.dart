@@ -1,6 +1,8 @@
 import 'package:ecomerce_app/data/product_data.dart';
 import 'package:flutter/material.dart';
 
+import '../../detail/detail_screen.dart';
+
 class ShopingItems extends StatelessWidget {
   final Product all;
   const ShopingItems({super.key, required this.all});
@@ -8,7 +10,10 @@ class ShopingItems extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => MyDetailScreen(all: all)));
+      },
       child: Stack(
         children: [
           Container(
