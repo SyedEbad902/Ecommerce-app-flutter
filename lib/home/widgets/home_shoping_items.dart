@@ -63,7 +63,24 @@ class ShopingItems extends StatelessWidget {
                 )
               ],
             ),
-          )
+          ),
+          Positioned(
+            child: Align(
+              alignment: Alignment.topRight,
+              child: Container(
+                height: 40,
+                width: 40,
+                decoration: const BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                      bottomLeft: Radius.circular(20),
+                      topRight: Radius.circular(20)),
+                  color: Color.fromARGB(255, 255, 156, 7),
+                ),
+                child: GestureDetector(onTap: (){},
+                child: IconButton(onPressed: (){}, icon: const Icon(Icons.favorite_outline,color: Colors.white,size: 22 ,)),),
+              ),
+            ),
+          ),
         ],
       ),
     );
