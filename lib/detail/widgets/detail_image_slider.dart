@@ -4,7 +4,8 @@ class DetailImageSlider extends StatelessWidget {
   final Function(int) onChange;
   final String image;
 
-  const DetailImageSlider({super.key, required this.onChange, required this.image});
+  const DetailImageSlider(
+      {super.key, required this.onChange, required this.image});
 
   @override
   Widget build(BuildContext context) {
@@ -12,8 +13,8 @@ class DetailImageSlider extends StatelessWidget {
       height: 220,
       child: PageView.builder(
           onPageChanged: onChange,
-          itemBuilder: (context, index) {
-            return Image.asset(image);
+          itemBuilder: (context, index) { 
+            return Hero(tag: image, child: Image.asset(image));
           }),
     );
   }
@@ -47,4 +48,3 @@ class SliderIndex extends StatelessWidget {
     );
   }
 }
-

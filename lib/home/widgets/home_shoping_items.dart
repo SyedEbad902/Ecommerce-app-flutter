@@ -11,8 +11,8 @@ class ShopingItems extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.push(
-            context, MaterialPageRoute(builder: (context) => MyDetailScreen(all: all)));
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => MyDetailScreen(all: all)));
       },
       child: Stack(
         children: [
@@ -28,11 +28,14 @@ class ShopingItems extends StatelessWidget {
                   height: 15,
                 ),
                 Center(
-                  child: Image.asset(
-                    all.image,
-                    width: 100,
-                    height: 100,
-                    fit: BoxFit.cover,
+                  child: Hero(
+                    tag: all.image,
+                    child: Image.asset(
+                      all.image,
+                      width: 100,
+                      height: 100,
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ),
                 const SizedBox(
@@ -41,7 +44,8 @@ class ShopingItems extends StatelessWidget {
                 Center(
                   child: Text(
                     all.title,
-                    style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+                    style: const TextStyle(
+                        fontSize: 14, fontWeight: FontWeight.bold),
                   ),
                 ),
                 // SizedBox(
@@ -52,8 +56,8 @@ class ShopingItems extends StatelessWidget {
                   children: [
                     Text(
                       "price ${all.price}",
-                      style:
-                          const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                      style: const TextStyle(
+                          fontSize: 15, fontWeight: FontWeight.bold),
                     ),
                   ],
                 )
