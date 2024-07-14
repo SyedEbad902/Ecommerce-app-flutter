@@ -1,5 +1,7 @@
 import 'package:ecomerce_app/nav_bar_screen.dart';
+import 'package:ecomerce_app/provider/cart_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(const MyApp());
@@ -9,10 +11,14 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
+  Widget build(BuildContext context) =>MultiProvider(
+    providers: [
+      ChangeNotifierProvider(create: (_) => CartProvider())
+  ],
+    child: MaterialApp(
       debugShowCheckedModeBanner: false,
       home: MyNavBar(),
+    )
     );
   }
-}
+

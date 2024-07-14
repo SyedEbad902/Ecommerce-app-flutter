@@ -12,7 +12,12 @@ class MyNavBar extends StatefulWidget {
 
 class _MyNavBarState extends State<MyNavBar> {
   int currentIndex = 2;
-  List screens = [const MyCartScreen(), const MyFavoriteScreen(), const MyHomeScreen()];
+  List screens = [
+    const MyCartScreen(),
+    const MyFavoriteScreen(),
+    const MyHomeScreen(),
+    const MyCartScreen(),
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
