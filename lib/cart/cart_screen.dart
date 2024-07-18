@@ -26,6 +26,7 @@ class _MyCartScreenState extends State<MyCartScreen> {
                 : provider.decrementQty(index);
           });
         },
+        child: Icon(icon, size: 20),
       );
     }
 
@@ -121,7 +122,7 @@ class _MyCartScreenState extends State<MyCartScreen> {
                           ),
                           Positioned(
                               top: 25,
-                              right: 25,
+                              right: 20,
                               child: Column(
                                 children: [
                                   IconButton(
@@ -133,7 +134,44 @@ class _MyCartScreenState extends State<MyCartScreen> {
                                         Icons.delete,
                                         size: 20,
                                         color: Colors.red,
-                                      ))
+                                      )),
+                                  SizedBox(
+                                    height: 10,
+                                  ),
+                                  Container(
+                                    height: 40,
+                                    decoration: BoxDecoration(
+                                      color: Color.fromARGB(255, 255, 156, 7),
+                                      border: Border.all(
+                                          color: Colors.grey.shade200,
+                                          width: 2),
+                                      borderRadius: BorderRadius.circular(20),
+                                    ),
+                                    child: Row(
+                                      children: [
+                                        SizedBox(
+                                          width: 10,
+                                        ),
+                                        productQuantity(Icons.add, index),
+                                        SizedBox(
+                                          width: 10,
+                                        ),
+                                        Text(
+                                          cartItem.quantity.toString(),
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.black),
+                                        ),
+                                        SizedBox(
+                                          width: 10,
+                                        ),
+                                        productQuantity(Icons.remove, index),
+                                        SizedBox(
+                                          width: 10,
+                                        ),
+                                      ],
+                                    ),
+                                  )
                                 ],
                               ))
                         ],
