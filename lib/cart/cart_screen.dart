@@ -1,3 +1,4 @@
+import 'package:ecomerce_app/cart/total_screen.dart';
 import 'package:ecomerce_app/provider/cart_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -31,6 +32,8 @@ class _MyCartScreenState extends State<MyCartScreen> {
     }
 
     return Scaffold(
+      bottomSheet: TotalScreen(),
+      // backgroundColor:  Color.fromARGB(255, 255, 156, 7),
       body: SafeArea(
         child: Column(
           children: [
@@ -121,8 +124,8 @@ class _MyCartScreenState extends State<MyCartScreen> {
                             ),
                           ),
                           Positioned(
-                              top: 25,
-                              right: 20,
+                              top: 20,
+                              right: 15,
                               child: Column(
                                 children: [
                                   IconButton(
@@ -136,7 +139,7 @@ class _MyCartScreenState extends State<MyCartScreen> {
                                         color: Colors.red,
                                       )),
                                   SizedBox(
-                                    height: 10,
+                                    height: 20,
                                   ),
                                   Container(
                                     height: 40,
