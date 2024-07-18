@@ -13,7 +13,7 @@ class MyNavBar extends StatefulWidget {
 class _MyNavBarState extends State<MyNavBar> {
   int currentIndex = 2;
   List screens = [
-    const MyCartScreen(),
+    "hello",
     const MyFavoriteScreen(),
     const MyHomeScreen(),
     const MyCartScreen(),
