@@ -1,4 +1,5 @@
 import 'package:ecomerce_app/data/product_data.dart';
+import 'package:ecomerce_app/provider/favorite_provider.dart';
 import 'package:flutter/material.dart';
 
 import '../../detail/detail_screen.dart';
@@ -9,6 +10,7 @@ class ShopingItems extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final provider = FavoriteProvider.of(context);
     return GestureDetector(
       onTap: () {
         Navigator.push(context,
@@ -76,8 +78,20 @@ class ShopingItems extends StatelessWidget {
                       topRight: Radius.circular(20)),
                   color: Color.fromARGB(255, 255, 156, 7),
                 ),
-                child: GestureDetector(onTap: (){},
-                child: IconButton(onPressed: (){}, icon: const Icon(Icons.favorite_outline,color: Colors.white,size: 22 ,)),),
+                child: GestureDetector(
+                  onTap: () {
+                    provider.isFavorite(all);
+                  },
+                  child: Icon(
+                    provider.isExist(all)
+                        ? Icons.favorite
+                        : Icons.favorite_outline,
+                    color: Colors.white,
+                    
+                    
+                    size: 22,
+                  ),
+                ),
               ),
             ),
           ),

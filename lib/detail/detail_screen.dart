@@ -20,6 +20,7 @@ class _MyDetailScreenState extends State<MyDetailScreen> {
   int currentSlide = 0;
   @override
   Widget build(BuildContext context) {
+    
     return Scaffold(
       //for add to cart
       floatingActionButton: AddToCartButton(all: widget.all),
@@ -30,7 +31,7 @@ class _MyDetailScreenState extends State<MyDetailScreen> {
           child: Column(
             children: [
               //for detail screen appbar
-              const DetailAppbar(),
+               DetailAppbar(all: widget.all),
               DetailImageSlider(
                   onChange: (index) {
                     setState(() {

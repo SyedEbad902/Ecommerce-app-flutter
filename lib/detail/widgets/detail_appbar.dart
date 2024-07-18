@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
 
+import '../../data/product_data.dart';
+import '../../provider/favorite_provider.dart';
+
 class DetailAppbar extends StatelessWidget {
-  const DetailAppbar({super.key});
+  final Product all;
+  const DetailAppbar({super.key, required this.all});
 
   @override
   Widget build(BuildContext context) {
+    final provider = FavoriteProvider.of(context);
+
     return Padding(
       padding: const EdgeInsets.all(10),
       child: Row(
@@ -12,7 +18,7 @@ class DetailAppbar extends StatelessWidget {
         children: [
           IconButton(
               style: IconButton.styleFrom(backgroundColor: Colors.white),
-             onPressed: () {
+              onPressed: () {
                 Navigator.pop(context);
               },
               icon: const Icon(
@@ -32,9 +38,12 @@ class DetailAppbar extends StatelessWidget {
           ),
           IconButton(
               style: IconButton.styleFrom(backgroundColor: Colors.white),
-              onPressed: () {},
-              icon: const Icon(
-                Icons.favorite_border_outlined,
+              onPressed: () {
+                provider.isFavorite(all);
+              },
+              icon: Icon(
+                provider.isExist(all) ? Icons.favorite : Icons.favorite_outline,
+                color: Colors.black,
                 size: 20,
               )),
         ],

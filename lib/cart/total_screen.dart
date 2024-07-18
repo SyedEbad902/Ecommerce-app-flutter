@@ -7,18 +7,18 @@ class TotalScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final provider = CartProvider.of(context);
-    
+
     return Container(
       height: 300,
       width: double.infinity,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(30),
           topRight: Radius.circular(30),
         ),
       ),
-      padding: EdgeInsets.all(20),
+      padding: const EdgeInsets.all(20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -28,17 +28,17 @@ class TotalScreen extends StatelessWidget {
                     borderRadius: BorderRadius.circular(30),
                     borderSide: BorderSide.none),
                 contentPadding:
-                    EdgeInsets.symmetric(vertical: 5, horizontal: 15),
+                    const EdgeInsets.symmetric(vertical: 5, horizontal: 15),
                 filled: true,
-                fillColor: Color.fromARGB(255, 255, 156, 7),
+                fillColor: const Color.fromARGB(255, 255, 156, 7),
                 hintText: "Enter Discount code",
-                hintStyle: TextStyle(
+                hintStyle: const TextStyle(
                     fontSize: 13,
                     fontWeight: FontWeight.w600,
                     color: Colors.grey),
                 suffixIcon: TextButton(
                     onPressed: () {},
-                    child: Text(
+                    child: const Text(
                       "Apply",
                       style: TextStyle(
                         fontSize: 20,
@@ -47,13 +47,13 @@ class TotalScreen extends StatelessWidget {
                       ),
                     ))),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
+              const Text(
                 "Subtotal",
                 style: TextStyle(
                   fontSize: 16,
@@ -63,24 +63,24 @@ class TotalScreen extends StatelessWidget {
               ),
               Text(
                 "\$${provider.totalPrice()}",
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.bold,
                 ),
               )
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
-          Divider(),
-          SizedBox(
+          const Divider(),
+          const SizedBox(
             height: 10,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
+              const Text(
                 "Total",
                 style: TextStyle(
                   fontSize: 16,
@@ -89,22 +89,22 @@ class TotalScreen extends StatelessWidget {
               ),
               Text(
                 "\$${provider.totalPrice()}",
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
                 ),
               )
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           ElevatedButton(
               onPressed: () {},
               style: ElevatedButton.styleFrom(
-                  backgroundColor: Color.fromARGB(255, 255, 156, 7),
-                  minimumSize: Size(double.infinity, 50)),
-              child: Text(
+                  backgroundColor: const Color.fromARGB(255, 255, 156, 7),
+                  minimumSize: const Size(double.infinity, 50)),
+              child: const Text(
                 "Check Out",
                 style: TextStyle(
                     fontSize: 15,

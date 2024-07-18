@@ -1,9 +1,7 @@
 import 'package:ecomerce_app/cart/total_screen.dart';
 import 'package:ecomerce_app/provider/cart_provider.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
-import '../detail/widgets/detail_appbar.dart';
 import '../nav_bar_screen.dart';
 
 class MyCartScreen extends StatefulWidget {
@@ -32,13 +30,13 @@ class _MyCartScreenState extends State<MyCartScreen> {
     }
 
     return Scaffold(
-      bottomSheet: TotalScreen(),
+      bottomSheet: const TotalScreen(),
       // backgroundColor:  Color.fromARGB(255, 255, 156, 7),
       body: SafeArea(
         child: Column(
           children: [
             Padding(
-              padding: EdgeInsets.all(8),
+              padding: const EdgeInsets.all(8),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -49,13 +47,13 @@ class _MyCartScreenState extends State<MyCartScreen> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => MyNavBar()));
+                                builder: (context) => const MyNavBar()));
                       },
                       icon: const Icon(
                         Icons.arrow_back_ios,
                         size: 20,
                       )),
-                  Text(
+                  const Text(
                     "My Cart",
                     style: TextStyle(
                         fontWeight: FontWeight.w500,
@@ -75,13 +73,13 @@ class _MyCartScreenState extends State<MyCartScreen> {
                         children: [
                           Padding(
                             padding:
-                                EdgeInsets.only(left: 10, right: 10, top: 10),
+                                const EdgeInsets.only(left: 10, right: 10, top: 10),
                             child: Container(
                               width: double.infinity,
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(20),
                                   color: Colors.white),
-                              padding: EdgeInsets.all(20),
+                              padding: const EdgeInsets.all(20),
                               child: Row(
                                 children: [
                                   Container(
@@ -90,10 +88,10 @@ class _MyCartScreenState extends State<MyCartScreen> {
                                     decoration: BoxDecoration(
                                         borderRadius:
                                             BorderRadius.circular(20)),
-                                    padding: EdgeInsets.all(10),
+                                    padding: const EdgeInsets.all(10),
                                     child: Image.asset(cartItem.image),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     width: 10,
                                   ),
                                   Column(
@@ -101,20 +99,20 @@ class _MyCartScreenState extends State<MyCartScreen> {
                                           CrossAxisAlignment.start,
                                       children: [
                                         Text(cartItem.title,
-                                            style: TextStyle(
+                                            style: const TextStyle(
                                                 fontSize: 15,
                                                 fontWeight: FontWeight.bold)),
-                                        SizedBox(height: 5),
+                                        const SizedBox(height: 5),
                                         Text(cartItem.category,
                                             style: TextStyle(
                                                 fontSize: 13,
                                                 fontWeight: FontWeight.bold,
                                                 color: Colors.grey.shade400)),
-                                        SizedBox(
+                                        const SizedBox(
                                           height: 10,
                                         ),
                                         Text("\$${cartItem.price}",
-                                            style: TextStyle(
+                                            style: const TextStyle(
                                                 fontSize: 13,
                                                 fontWeight: FontWeight.bold,
                                                 color: Colors.grey)),
@@ -133,18 +131,18 @@ class _MyCartScreenState extends State<MyCartScreen> {
                                         cartList.removeAt(index);
                                         setState(() {});
                                       },
-                                      icon: Icon(
+                                      icon: const Icon(
                                         Icons.delete,
                                         size: 20,
                                         color: Colors.red,
                                       )),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 20,
                                   ),
                                   Container(
                                     height: 40,
                                     decoration: BoxDecoration(
-                                      color: Color.fromARGB(255, 255, 156, 7),
+                                      color: const Color.fromARGB(255, 255, 156, 7),
                                       border: Border.all(
                                           color: Colors.grey.shade200,
                                           width: 2),
@@ -152,24 +150,24 @@ class _MyCartScreenState extends State<MyCartScreen> {
                                     ),
                                     child: Row(
                                       children: [
-                                        SizedBox(
+                                        const SizedBox(
                                           width: 10,
                                         ),
                                         productQuantity(Icons.add, index),
-                                        SizedBox(
+                                        const SizedBox(
                                           width: 10,
                                         ),
                                         Text(
                                           cartItem.quantity.toString(),
-                                          style: TextStyle(
+                                          style: const TextStyle(
                                               fontWeight: FontWeight.bold,
                                               color: Colors.black),
                                         ),
-                                        SizedBox(
+                                        const SizedBox(
                                           width: 10,
                                         ),
                                         productQuantity(Icons.remove, index),
-                                        SizedBox(
+                                        const SizedBox(
                                           width: 10,
                                         ),
                                       ],
