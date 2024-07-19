@@ -30,7 +30,7 @@ class TotalScreen extends StatelessWidget {
                 contentPadding:
                     const EdgeInsets.symmetric(vertical: 5, horizontal: 15),
                 filled: true,
-                fillColor: const Color.fromARGB(255, 255, 156, 7),
+                fillColor: Colors.grey.shade100,
                 hintText: "Enter Discount code",
                 hintStyle: const TextStyle(
                     fontSize: 13,

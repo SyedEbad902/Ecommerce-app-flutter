@@ -72,8 +72,8 @@ class _MyCartScreenState extends State<MyCartScreen> {
                       return Stack(
                         children: [
                           Padding(
-                            padding:
-                                const EdgeInsets.only(left: 10, right: 10, top: 10),
+                            padding: const EdgeInsets.only(
+                                left: 10, right: 10, top: 10),
                             child: Container(
                               width: double.infinity,
                               decoration: BoxDecoration(
@@ -125,6 +125,7 @@ class _MyCartScreenState extends State<MyCartScreen> {
                               top: 20,
                               right: 15,
                               child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.end,
                                 children: [
                                   IconButton(
                                       onPressed: () {
@@ -142,7 +143,8 @@ class _MyCartScreenState extends State<MyCartScreen> {
                                   Container(
                                     height: 40,
                                     decoration: BoxDecoration(
-                                      color: const Color.fromARGB(255, 255, 156, 7),
+                                      color: const Color.fromARGB(
+                                          255, 255, 156, 7),
                                       border: Border.all(
                                           color: Colors.grey.shade200,
                                           width: 2),
