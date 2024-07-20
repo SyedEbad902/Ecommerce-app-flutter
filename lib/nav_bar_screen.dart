@@ -3,6 +3,8 @@ import 'package:ecomerce_app/Favorite/favorite_screen.dart';
 import 'package:ecomerce_app/home/home_screen.dart';
 import 'package:flutter/material.dart';
 
+import 'Profile/profile.dart';
+
 class MyNavBar extends StatefulWidget {
   const MyNavBar({super.key});
 
@@ -13,10 +15,11 @@ class MyNavBar extends StatefulWidget {
 class _MyNavBarState extends State<MyNavBar> {
   int currentIndex = 2;
   List screens = [
-    "hello",
+    const Scaffold(),
     const MyFavoriteScreen(),
     const MyHomeScreen(),
     const MyCartScreen(),
+    const ProfileScreen(),
   ];
   @override
   Widget build(BuildContext context) {

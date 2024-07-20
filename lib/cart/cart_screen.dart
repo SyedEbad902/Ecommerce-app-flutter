@@ -30,7 +30,8 @@ class _MyCartScreenState extends State<MyCartScreen> {
     }
 
     return Scaffold(
-      bottomSheet: const TotalScreen(),
+      // ignore: prefer_const_constructors
+      bottomSheet: TotalScreen(),
       // backgroundColor:  Color.fromARGB(255, 255, 156, 7),
       body: SafeArea(
         child: Column(

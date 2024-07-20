@@ -73,7 +73,7 @@ class _MyHomeScreenState extends State<MyHomeScreen> {
                           });
                         },
                         child: Container(
-                          padding: EdgeInsets.all(5),
+                          padding: const EdgeInsets.all(5),
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(15),
                               color: selectedIndex == index
