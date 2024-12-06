@@ -31,8 +31,7 @@ class CartProvider extends ChangeNotifier {
     }
   }
 
-  // incrementQty(int index) => _cart[index].quantity++;
-  // decrementQty(int index) => _cart[index].quantity--;
+ 
 
   totalPrice() {
     double total1 = 0.0;
